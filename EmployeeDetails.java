@@ -1,4 +1,3 @@
-package anilkali;
 import java.util.Scanner;
 class Employee {
     String empId, empName;
