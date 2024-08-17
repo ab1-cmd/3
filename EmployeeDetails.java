@@ -3,7 +3,8 @@ class Employee {
     String empId, empName;
     int phone;
     float salary;
-    public void accept(Scanner scanner) {
+    public void accept() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter employee id:");
         empId = scanner.next();
         System.out.println("Enter employee name:");
@@ -24,8 +25,10 @@ class Employee {
 class Teaching extends Employee {
     String domain;
     int noPublications;
-    public void accept(Scanner scanner) {
-        super.accept(scanner);
+
+    public void accept() {
+        super.accept();
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter domain:");
         domain = scanner.nextLine();
         System.out.println("Enter number of publications:");
@@ -39,8 +42,9 @@ class Teaching extends Employee {
 }
 class Technical extends Employee {
     String skills;
-    public void accept(Scanner scanner) {
-        super.accept(scanner);
+    public void accept() {
+        super.accept();
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter skills:");
         skills = scanner.nextLine();
     }
@@ -51,34 +55,34 @@ class Technical extends Employee {
 }
 class Contract extends Employee {
     int period;
-   public void accept(Scanner scanner) {
-        super.accept(scanner);
+    public void accept() {
+        super.accept();
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter contract period:");
         period = scanner.nextInt();
     }
-    public void display() {
+
+   public void display() {
         super.display();
         System.out.println("Contract Period: " + period);
     }
 }
 public class EmployeeDetails {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         Teaching t1 = new Teaching();
         Technical t2 = new Technical();
         Contract t3 = new Contract();
         System.out.println("Enter details for Teaching employee:");
-        t1.accept(scanner);
+        t1.accept();
         System.out.println("\nTeaching Employee details:");
         t1.display();
         System.out.println("\nEnter details for Technical employee:");
-        t2.accept(scanner);
+        t2.accept();
         System.out.println("\nTechnical Employee details:");
         t2.display();
         System.out.println("\nEnter details for Contract employee:");
-        t3.accept(scanner);
+        t3.accept();
         System.out.println("\nContract Employee details:");
         t3.display();
-        scanner.close();  // Close the scanner at the end
     }
 }
